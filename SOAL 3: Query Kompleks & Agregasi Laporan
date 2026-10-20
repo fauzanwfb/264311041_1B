@@ -1,1 +1,8 @@
-
+SELECT 
+    p.nama,
+    COUNT(pf.id_peringatan) AS total_peringatan,
+    AVG(pf.skor_fraud) AS rata_rata_skor
+FROM pengguna p
+JOIN peringatan_fraud pf ON p.id_pengguna = pf.id_pengguna
+WHERE pf.status_peringatan = 'Selesai'
+GROUP BY p.id_pengguna, p.nama;
