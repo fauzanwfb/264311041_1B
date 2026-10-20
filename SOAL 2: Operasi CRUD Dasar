@@ -1,1 +1,27 @@
+-- [CREATE] 3 baris per tabel (total 9)
+INSERT INTO pengguna (nama, status_verifikasi) VALUES
+('Andi', 'Terverifikasi'),
+('Joko', 'Belum Terverifikasi'),
+('Budi ', 'Dibekukan');
 
+INSERT INTO model_deteksi (nama_algoritma, pendekatan, mode_pemrosesan) VALUES
+('Random Forest', 'Supervised', 'Real-time'),
+('Isolation Forest', 'Unsupervised', 'Batch'),
+('Rule Engine Threshold', 'Rule-based', 'Real-time');
+
+INSERT INTO peringatan_fraud (id_model, id_pengguna, waktu_deteksi, skor_fraud, status_peringatan) VALUES
+(1, 1, '2026-10-18 09:15:00', 87.50, 'Baru'),
+(2, 2, '2026-10-18 13:40:00', 62.25, 'Sedang Ditinjau'),
+(3, 3, '2026-10-19 21:05:00', 95.00, 'Selesai');
+
+-- [READ] Seluruh isi salah satu tabel induk
+SELECT * FROM pengguna;
+
+-- [UPDATE] Ubah status pada tabel transaksi (WHERE pada Primary Key)
+UPDATE peringatan_fraud
+SET status_peringatan = 'Selesai'
+WHERE id_peringatan = 2;
+
+-- [DELETE] Hapus satu baris pada tabel transaksi (WHERE pada Primary Key)
+DELETE FROM peringatan_fraud
+WHERE id_peringatan = 1;
