@@ -1,0 +1,3 @@
+1. Pemodelan Konseptual: Memetakan entitas, atribut, dan aturan bisnis ke dalam Entity-Relationship Diagram (ERD).
+2. Pemodelan Logis: Mentransformasikan ERD ke dalam Skema Relasional serta menerapkan teknik normalisasi (1NF hingga 3NF) untuk menghilangkan redundansi.
+3. Pemodelan Fisik: Menerjemahkan skema relasional menjadi struktur tabel fisik menggunakan kode SQL DDL, lengkap dengan Primary Key, Foreign Key, dan constraint validasi.
